@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView detailes;
     FirebaseUser user = mAuth.getCurrentUser();
 
-
+//sara
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
