@@ -77,9 +77,6 @@ public class logIn extends AppCompatActivity {
                     return;
                 }
 
-
-
-
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                             @Override
@@ -89,8 +86,9 @@ public class logIn extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("TAG", "signInWithEmail:success");
                                     Intent intent= new Intent(getApplicationContext(), MainActivity.class);
+                                    intent.putExtra("email", email);
                                     startActivity(intent);
-                                    finish();
+//                                    finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("TAG", "signInWithEmail:failure", task.getException());

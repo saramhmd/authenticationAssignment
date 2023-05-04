@@ -41,11 +41,11 @@ public class register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        editTextEmail = findViewById(R.id.email);
-        editTextPass = findViewById(R.id.editTextTextPassword);
-        regiterBtn = findViewById(R.id.register_btn);
-        logIn = findViewById(R.id.logIn_btn);
-        progressBar = findViewById(R.id.progressBar);
+        editTextEmail = findViewById(R.id.emailr);
+        editTextPass = findViewById(R.id.editTextTextPasswordr);
+        regiterBtn = findViewById(R.id.register_btnr);
+        logIn = findViewById(R.id.logIn_btnr);
+        progressBar = findViewById(R.id.progressBarr);
 
 
         logIn.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,7 @@ public class register extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(getApplicationContext(), com.example.authenticationassignment.logIn.class);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
         regiterBtn.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +79,7 @@ public class register extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Intent intent= new Intent(getApplicationContext(), com.example.authenticationassignment.register.class);
+                                    intent.putExtra("email", email);
                                     startActivity(intent);
                                     Log.d("TAG", "createUserWithEmail:success");
                                     // FirebaseUser user = mAuth.getCurrentUser();
